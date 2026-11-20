@@ -1,0 +1,7 @@
+{
+  "name": "trader-habit-coach",
+  "private": true,
+  "version": "2.0.1",
+  "type": "module",
+  "description": "مربی عادت معامله‌گر — PWA ماژولار بر اساس کتاب کار صبر و اراده در معامله‌گری"
+}

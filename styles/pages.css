@@ -1,0 +1,240 @@
+/* ==========================================================================
+   pages.css — استایل‌های خاص صفحات: داشبورد، مسیر، امروز، پیشرفت، گزارش چاپی
+   ========================================================================== */
+
+/* ---------- داشبورد: هیرو ---------- */
+.hero {
+  background: linear-gradient(118deg, #101d31 0%, #1d385b 65%, #237c91 130%);
+  color: #fff;
+  padding: 28px 30px;
+  border-radius: 22px;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 25px;
+  align-items: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border: 1px solid #ffffff22;
+  border-radius: 50%;
+  inset-inline-start: -65px;
+  inset-block-start: -110px;
+  box-shadow: 0 0 0 28px #ffffff08, 0 0 0 58px #ffffff05;
+}
+
+.eyebrow { font-size: 11px; color: #a8d9dc; letter-spacing: 0.04em; }
+.hero h2 { font-size: 25px; margin: 8px 0 9px; line-height: 1.6; }
+.hero p { font-size: 13px; color: #d4deeb; max-width: 650px; margin: 0 0 18px; }
+
+.hero-stats { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.hero-stat {
+  background: #ffffff12;
+  border: 1px solid #ffffff1e;
+  border-radius: 12px;
+  padding: 8px 12px;
+  min-width: 90px;
+}
+
+.hero-stat strong { display: block; font-size: 19px; }
+.hero-stat span { font-size: 10px; color: #b6c8dd; }
+
+/* ---------- داشبورد: کارت تمرین بعدی ---------- */
+.today-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  border: 1px solid #d9e7f7;
+  background: linear-gradient(120deg, #fff, #f2f8ff);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.today-card h3 { font-size: 19px; margin: 8px 0 3px; }
+.today-card p { margin: 0; color: var(--muted); font-size: 12px; }
+.today-card .bar { max-width: 400px; }
+
+/* ---------- داشبورد: نوار فعالیت ۲۸ روزه ---------- */
+.activity-strip {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.activity-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: #e6ebf2;
+  border: 1px solid var(--line);
+}
+
+.activity-dot.on {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.activity-dot.today {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+.activity-legend {
+  display: flex;
+  gap: 14px;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ---------- داشبورد: تراشه احساس‌ها ---------- */
+.emotion-chips {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.emotion-chip {
+  background: #fdf3e7;
+  border: 1px solid #f0dcc0;
+  color: #8a6430;
+  border-radius: 99px;
+  padding: 4px 10px;
+  font-size: 11px;
+}
+
+/* ---------- مسیر: کاشی روزها ---------- */
+.day-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.day-tile {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 13px;
+  padding: 11px 9px;
+  text-align: start;
+  min-height: 89px;
+  position: relative;
+  transition: 0.15s;
+  display: block;
+}
+
+.day-tile:hover:not(:disabled) {
+  border-color: #8fb5dd;
+  transform: translateY(-2px);
+}
+
+.day-tile.done { background: #effaf6; border-color: #c9ecdd; }
+.day-tile.current { border: 2px solid var(--blue); padding: 10px 8px; }
+.day-tile.locked { opacity: 0.45; }
+
+.day-tile b { font-size: 11px; color: var(--muted); }
+.day-tile strong { display: block; font-size: 11px; line-height: 1.7; margin-top: 5px; }
+.day-tile .status {
+  position: absolute;
+  inset-inline-end: 8px;
+  inset-block-start: 8px;
+  font-size: 11px;
+}
+
+/* ---------- تایمر ۹۰ ثانیه ---------- */
+.timer-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.timer-display {
+  font-size: 20px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- نمودارها ---------- */
+.chart-box svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.chart-legend i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin-inline-end: 5px;
+  vertical-align: middle;
+}
+
+/* ---------- پیشرفت: گرید مرور روزها ---------- */
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.review-grid .btn {
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.6;
+}
+
+.review-grid .btn .d-title { font-size: 9px; font-weight: 400; }
+
+/* ---------- گزارش چاپی ---------- */
+.report-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.report-block { break-inside: avoid; }
+
+.report-actions { display: flex; gap: 8px; margin: 14px 0; flex-wrap: wrap; }
+
+/* چاپ: حذف پوسته اپ، سفید و سیاه خالص */
+@media print {
+  body { background: #fff; }
+  .sidebar, .bottom-nav, .topbar, .footer-note, .toast, .modal-backdrop,
+  .report-actions, .mobile-menu, .status-chip { display: none !important; }
+  .app { display: block; }
+  main { padding: 0; }
+  .page { max-width: 100%; }
+  .card, .today-card { box-shadow: none; border: 1px solid #ccc; background: #fff; break-inside: avoid; }
+  .hero { background: #fff !important; color: #000 !important; border: 2px solid #000; }
+  .hero p, .hero-stat span, .eyebrow { color: #333 !important; }
+  .hero-stat { background: #f2f2f2 !important; border-color: #999 !important; }
+  .progress-ring { background: conic-gradient(#333 var(--ring-pct, 0%), #eee 0) !important; }
+  .progress-ring::before { background: #fff; }
+  .progress-ring strong { color: #000; }
+  .progress-ring span { color: #333; }
+  .bar span { background: #333 !important; }
+}

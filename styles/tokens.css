@@ -1,0 +1,43 @@
+/* ==========================================================================
+   tokens.css — متغیرهای طراحی (رنگ، فاصله، شعاع، سایه)
+   تنها نقطهٔ تعریف هویت بصری؛ هیچ فایل دیگری رنگ خام hardcode نمی‌کند.
+   ========================================================================== */
+
+:root {
+  /* سطح‌ها و متن */
+  --bg: #f3f5f8;
+  --surface: #ffffff;
+  --surface-2: #f7f9fc;
+  --ink: #172338;
+  --muted: #718096;
+  --line: #e5eaf1;
+
+  /* هویت اصلی (همان پالت v1) */
+  --navy: #101d31;
+  --navy-2: #1c2e49;
+  --blue: #2878d0;
+  --cyan: #39b7bd;
+  --green: #239b78;
+  --amber: #d69a32;
+  --red: #d45c63;
+
+  /* نمودارها */
+  --chart-patience: #2878d0;
+  --chart-willpower: #239b78;
+  --chart-adherence: #d69a32;
+  --chart-grid: #e5eaf1;
+  --chart-off: #e6ebf2;
+
+  /* افکت */
+  --shadow: 0 12px 32px rgba(19, 38, 66, 0.07);
+  --shadow-soft: 0 3px 14px #102b4c05;
+  --radius: 18px;
+  --radius-sm: 12px;
+
+  /* تایپوگرافی */
+  --font-sans: Vazirmatn, Tahoma, "Segoe UI", sans-serif;
+
+  /* فاصله‌ها */
+  --gap: 16px;
+  --pad-card: 19px;
+}

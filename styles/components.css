@@ -1,0 +1,468 @@
+/* ==========================================================================
+   components.css — اجزای رابط کاربری مستقل از صفحه
+   ========================================================================== */
+
+/* ---------- دکمه‌ها ---------- */
+.btn {
+  border: 0;
+  border-radius: 11px;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn.primary { background: var(--navy); color: #fff; }
+.btn.primary:hover { background: #203a5c; transform: translateY(-1px); }
+.btn.secondary { background: #eaf1fa; color: #245b92; }
+.btn.ghost { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+.btn.danger { background: #fff0f0; color: #b23d49; }
+.btn.small { padding: 7px 11px; font-size: 11px; }
+
+/* ---------- کارت و گرید ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: var(--pad-card);
+  box-shadow: var(--shadow-soft);
+  min-width: 0;
+}
+
+.grid { display: grid; gap: var(--gap); }
+
+.grid.metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 18px 0;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(270px, 0.7fr);
+  gap: var(--gap);
+  align-items: start;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 25px 0 12px;
+}
+
+.section-head h2 { margin: 0; font-size: 16px; }
+.section-head p { margin: 0; color: var(--muted); font-size: 11px; }
+
+/* ---------- سنجه‌ها ---------- */
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.metric-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  background: #edf4fc;
+  display: grid;
+  place-items: center;
+  color: #276fb8;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.metric small { display: block; color: var(--muted); font-size: 11px; }
+.metric strong { font-size: 23px; display: block; line-height: 1.35; }
+.metric strong .unit { font-size: 11px; color: var(--muted); font-weight: 400; }
+
+/* ---------- برچسب و پیل ---------- */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 99px;
+  padding: 4px 9px;
+  background: #eaf2fb;
+  color: #31689e;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.status-chip {
+  background: #e7f7f1;
+  color: #18805f;
+  border: 1px solid #ccefe2;
+  padding: 7px 11px;
+  border-radius: 99px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.subnav {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 17px;
+}
+
+.pill {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 99px;
+  font-size: 11px;
+}
+
+.pill.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+/* ---------- فرم‌ها ---------- */
+.field {
+  display: grid;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #47566b;
+}
+
+.field input,
+.field textarea,
+.field select {
+  border: 1px solid #dce4ee;
+  background: #fbfcfe;
+  border-radius: 10px;
+  padding: 10px 12px;
+  color: var(--ink);
+  outline: none;
+  width: 100%;
+  font-size: 12px;
+}
+
+.field textarea {
+  min-height: 82px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  border-color: #69a0d5;
+  box-shadow: 0 0 0 3px #2878d015;
+}
+
+/* ---------- چک‌لیست ---------- */
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 11px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  margin: 7px 0;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.check-row input {
+  width: 17px;
+  height: 17px;
+  margin: 4px 0 0;
+  accent-color: #218b80;
+  flex-shrink: 0;
+}
+
+.check-row span {
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.check-row.done {
+  background: #f0faf6;
+  border-color: #ccebdd;
+}
+
+.check-group { display: grid; gap: 2px; }
+
+/* ---------- امتیازدهی (رادیو گروهی) ---------- */
+.rating {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.rating button {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.rating button.selected,
+.rating button[aria-checked="true"] {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+/* ---------- خط امتیاز و امتیاز کل ---------- */
+.scoreline {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.scoreline:last-child { border: 0; }
+.scoreline label { font-size: 12px; }
+.scoreline strong { font-size: 13px; }
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.score-input {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.score-input label {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  min-height: 36px;
+}
+
+.score-input input {
+  width: 100%;
+  border: 1px solid #dce4ee;
+  border-radius: 8px;
+  padding: 7px;
+  background: white;
+}
+
+.total-score {
+  background: var(--navy);
+  color: white;
+  border-radius: 12px;
+  padding: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.total-score strong { font-size: 23px; }
+
+/* ---------- اعلان‌ها ---------- */
+.notice {
+  border-inline-start: 3px solid var(--cyan);
+  background: #edf8fa;
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: #315d6c;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.warning {
+  border-inline-start-color: var(--amber);
+  background: #fff8e9;
+  color: #7d5b24;
+}
+
+.danger-box {
+  border-inline-start: 3px solid var(--red);
+  background: #fff1f1;
+  padding: 13px;
+  border-radius: 12px;
+  color: #893e46;
+  font-size: 12px;
+}
+
+/* ---------- نوار پیشرفت ---------- */
+.bar {
+  height: 7px;
+  background: #edf1f6;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  border-radius: 99px;
+  transition: width 0.3s;
+}
+
+/* ---------- حلقه پیشرفت ---------- */
+.progress-ring {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin: auto;
+  background: conic-gradient(var(--ring-color, #48c5bd) var(--ring-pct, 0%), rgba(255, 255, 255, 0.13) 0);
+  position: relative;
+}
+
+.progress-ring::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: var(--ring-bg, #16294a);
+}
+
+.progress-ring div {
+  position: relative;
+  text-align: center;
+}
+
+.progress-ring strong { font-size: 31px; display: block; line-height: 1.2; color: #fff; }
+.progress-ring span { font-size: 10px; color: #c5d6e7; }
+
+/* ---------- مرحله‌های برنامه ---------- */
+.stages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stage {
+  padding: 16px;
+  border-radius: 15px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.stage .num { font-size: 11px; color: var(--muted); }
+.stage strong { display: block; font-size: 14px; margin: 5px 0; }
+.stage small { font-size: 10px; color: var(--muted); }
+
+/* ---------- کارت احساس ---------- */
+.emotion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.emotion-card {
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 15px;
+  background: var(--surface);
+}
+
+.emotion-card h3 { margin: 0 0 7px; font-size: 13px; }
+.emotion-card p { font-size: 11px; color: var(--muted); margin: 5px 0; }
+.emotion-card b { font-size: 10px; color: #365f85; }
+
+/* ---------- متفرقه ---------- */
+.mini-title { font-size: 12px; font-weight: 800; margin: 16px 0 7px; }
+
+.divider {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 15px 0;
+}
+
+.empty {
+  padding: 30px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ---------- توست ---------- */
+.toast {
+  position: fixed;
+  bottom: 22px;
+  inset-inline-end: 22px; /* مطابق v1: پایین سمت چپ */
+  background: #142b45;
+  color: #fff;
+  border-radius: 11px;
+  padding: 11px 16px;
+  font-size: 12px;
+  box-shadow: var(--shadow);
+  z-index: 60;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.2s;
+  pointer-events: none;
+  max-width: min(90vw, 420px);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- مودال ---------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #0b1727a6;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: 18px;
+  max-width: 500px;
+  width: 100%;
+  padding: 22px;
+  box-shadow: 0 25px 80px #0003;
+}
+
+.modal h3 { margin: 0 0 8px; }
+.modal p { font-size: 12px; color: var(--muted); }
+.modal .modal-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* ---------- واکنش‌گرای اجزا ---------- */
+@media (max-width: 1000px) {
+  .grid.metrics { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 720px) {
+  .grid.metrics { gap: 9px; margin: 12px 0; }
+  .card { padding: 14px; }
+  .metric { gap: 8px; }
+  .metric-icon { width: 35px; height: 35px; }
+  .metric strong { font-size: 19px; }
+  .two-col { grid-template-columns: 1fr; }
+  .emotion-grid { grid-template-columns: 1fr; }
+  .score-grid { grid-template-columns: repeat(2, 1fr); }
+  .stages { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "مربی عادت معامله‌گر",
+  "short_name": "مربی عادت",
+  "description": "مربی عادت‌سازی معامله‌گر بر اساس کتاب کار صبر و اراده در معامله‌گری",
+  "id": "trader-habit-coach-v2",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#101d31",
+  "theme_color": "#101d31",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
